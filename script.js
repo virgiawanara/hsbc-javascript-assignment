@@ -74,6 +74,7 @@ function showtable(curarray) {
     `;
 
 // for checking array is empty 
+
     if(curarray == ""){
         document.getElementById("error").innerHTML = `<span class="text-red-500">Not Found!</span>` 
     } 
@@ -82,7 +83,7 @@ function showtable(curarray) {
 
         for(var i = 0 ; i < curarray.length;i++){
             document.getElementById("mytable").innerHTML += `
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <tr class="capitalize bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">${curarray[i].name}</th>
                     <td class="px-6 py-4">${curarray[i].country}</td>
                     <td class="px-6 py-4">${curarray[i].age}</td>
@@ -93,4 +94,26 @@ function showtable(curarray) {
 }
 
 // calling show table data method
+
 showtable(array);
+
+// take filtered data array
+
+var newarray = [];
+
+// for searching method
+
+document.getElementById("search").addEventListener("keyup",function(){
+
+    var search = this.value.toLocaleLowerCase();
+
+    newarray = array.filter(function (val) {
+
+        if(val.name.includes(search) || val.country.includes(search) || val.age.includes(search)){
+            var newobj = {name : val.name , country : val.country , age : val.age};
+            return newobj;
+        }
+    })
+
+    showtable(newarray);
+})
