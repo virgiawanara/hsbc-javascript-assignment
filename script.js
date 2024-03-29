@@ -61,7 +61,7 @@ var array = [
     }, 
 ]
 
-// show table data
+// header tabel
 
 function showtable(curarray) {
 
@@ -73,7 +73,7 @@ function showtable(curarray) {
         </tr>
     `;
 
-// for checking array is empty 
+// data tabel array dan cek jika data kosong maka akan muncul keterangan not found 
 
     if(curarray == ""){
         document.getElementById("error").innerHTML = `<span class="text-red-500">Not Found!</span>` 
@@ -93,15 +93,15 @@ function showtable(curarray) {
     }
 }
 
-// calling show table data method
+// memaanggil data Table
 
 showtable(array);
 
-// take filtered data array
+// filter data array
 
 var newarray = [];
 
-// for searching method
+// metode untuk mencari data di tabel
 
 document.getElementById("search").addEventListener("keyup",function(){
 
