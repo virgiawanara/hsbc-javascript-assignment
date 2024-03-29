@@ -73,7 +73,7 @@ function showtable(curarray) {
         </tr>
     `;
 
-// data tabel array dan cek jika data kosong maka akan muncul keterangan not found 
+// menampilkan data tabel array dan cek jika data kosong maka akan muncul keterangan not found 
 
     if(curarray == ""){
         document.getElementById("error").innerHTML = `<span class="text-red-500">Not Found!</span>` 
@@ -81,7 +81,7 @@ function showtable(curarray) {
     else{
         document.getElementById("error").innerHTML = "";
 
-        for(var i = 0 ; i < curarray.length; i++){
+        for(var i = 0 ; i < curarray.length; i++) {
             document.getElementById("mytable").innerHTML += `
                 <tr class="capitalize bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">${curarray[i].name}</th>
@@ -93,7 +93,7 @@ function showtable(curarray) {
     }
 }
 
-// memaanggil data Table
+// memaanggil data tabel
 
 showtable(array);
 
